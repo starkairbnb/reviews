@@ -12,8 +12,7 @@ const ratingSchema = mongoose.Schema({
 
 const reviewSchema = mongoose.Schema({
   user: String,
-  month: String,
-  year: String,
+  date: String,
   text: String,
   userImage: String
 })

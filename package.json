@@ -4,7 +4,11 @@
   "description": "reviews module for front-end capstone",
   "main": "server/server.js",
   "scripts": {
-    "test": "'mocha test'"
+    "build": "webpack -d --watch",
+    "start": "nodemon server/server.js && node database/reviewGenerator.js",
+    "seed": "node database/reviewGenerator.js",
+    "server-dev": "nodemon server/server.js",
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",

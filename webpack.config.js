@@ -1,5 +1,7 @@
+const combinedLoaders = require('webpack-combine-loaders')
+
 module.exports = {
-  entry: __dirname + '/client/src',
+  entry: __dirname + '/client/src/index.jsx',
   module: {
     rules: [
       { 
@@ -11,7 +13,24 @@ module.exports = {
             presets: ['@babel/preset-react', '@babel/preset-env']
           }
         }
-      }
+      } 
+      // { 
+      //   test: [/\.css/],
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: combinedLoaders([
+      //       {
+      //         loader: 'style-loader'
+      //       }, {
+      //         loader: 'css-loader',
+      //         query: {
+      //           modules: true,
+      //           localIdentName: '[name]__[loader]__[hash:base64:5]'
+      //         }
+      //       }
+      //     ])
+      //   }
+      // }
     ]
   },
    output: {

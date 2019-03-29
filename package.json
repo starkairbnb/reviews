@@ -31,11 +31,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "css-loader": "^2.1.1",
     "express": "^4.16.4",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "style-loader": "^0.23.1",
+    "webpack-combine-loaders": "^2.0.4"
   }
 }

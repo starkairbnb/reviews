@@ -2,14 +2,32 @@ import React from 'react';
 import RatingList from './RatingList.jsx';
 import ReviewList from './ReviewList.jsx';
 
-const App = (props) => {
+class App extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.state = {
+      ratings: {
+        accuracy: 2,
+        communication: 2.5,
+        cleanliness: 0,
+        location: 4.5,
+        checkIn: 5,
+        value: 4,
+        average: 3
+      },
+      reviews: []
+    }
+  }
+
+
+  render () {
   return (
-  <section>
-    <RatingList />
-    <RatingList />
+  <section >
+    <RatingList ratings={this.state.ratings}/>
     <ReviewList />
   </section>
   )
+}
 }
 
 export default App;

@@ -13,24 +13,11 @@ module.exports = {
             presets: ['@babel/preset-react', '@babel/preset-env']
           }
         }
-      } 
-      // { 
-      //   test: [/\.css/],
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: combinedLoaders([
-      //       {
-      //         loader: 'style-loader'
-      //       }, {
-      //         loader: 'css-loader',
-      //         query: {
-      //           modules: true,
-      //           localIdentName: '[name]__[loader]__[hash:base64:5]'
-      //         }
-      //       }
-      //     ])
-      //   }
-      // }
+      }, 
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules&importLoaders=true&localIdentName=[name]__[local]___[hash:base64:5]' 
+      }
     ]
   },
    output: {

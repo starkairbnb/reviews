@@ -1,0 +1,20 @@
+.emptyStar {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.fullStar {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.halfStar {
+  position: absolute;
+  width: 7.5px;
+  height: 15px;
+  top: -12;
+  left: 12;
+  z-index: 1;
+}

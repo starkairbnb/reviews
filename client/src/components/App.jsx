@@ -1,15 +1,70 @@
 import React from 'react';
 import RatingList from './RatingList.jsx';
 import ReviewList from './ReviewList.jsx';
+// import fonts from '../css/fonts.css';
+import axios from 'axios';
 
-const App = (props) => {
+class App extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.state = {
+      ratings: {},
+      reviews: [
+        {
+          user: 'Linda', 
+          date: 'October 2016', 
+          text: 'This was great',
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
+        },
+        {
+          user: 'Pete', 
+          date: 'January 1032', 
+          text: 'Alms for the poor',
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
+        },
+        {
+          user: 'Hart', 
+          date: 'June 1919', 
+          text: 'Thank goodness the war is over',
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
+        },
+        {
+          user: 'Gonrald', 
+          date: 'Hernz 5172', 
+          text: 'help',
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
+        },
+      ]
+    }
+  }
+
+  componentDidMount () {
+    this.getRatings()
+      .then(this.getReviews)
+  }
+
+  getRatings () {
+    return axios.get('/api/rating')
+      .then((res) => {
+        this.setState({ ratings: res.data});
+      })
+  }
+
+  getReviews () {
+    return axios.get('/api/reviews')
+    .then((res) => {
+      console.log(res.data);
+    })
+  }
+
+  render () {
   return (
-  <section>
-    <RatingList />
-    <RatingList />
-    <ReviewList />
+  <section >
+    <RatingList ratings={this.state.ratings}/>
+    <ReviewList reviews={this.state.reviews}/>
   </section>
   )
+}
 }
 
 export default App;

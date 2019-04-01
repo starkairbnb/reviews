@@ -1,0 +1,14 @@
+.profilePic {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/* .profilePic {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+} */

@@ -11,14 +11,17 @@ class ReviewList extends React.Component {
 
   render() { return (
     <div>
-    <Review />
-    <Review />
-    <Review />
-    <Review />
-    <Review />
-    <Review />
-    <Review />
-  </div>
+      {this.props.reviews.map((review, index) => {
+        return <Review key={index} review={review} />
+      })}
+      {/* <Review />
+      <Review />
+      <Review />
+      <Review />
+      <Review />
+      <Review />
+      <Review /> */}
+    </div>
   )
   }
 } 

@@ -1,6 +1,7 @@
 import React from 'react';
 import RatingList from './RatingList.jsx';
 import ReviewList from './ReviewList.jsx';
+// import fonts from '../css/fonts.css';
 
 class App extends React.Component { 
   constructor(props) {

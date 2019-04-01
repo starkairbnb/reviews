@@ -14,25 +14,25 @@ class App extends React.Component {
           user: 'Linda', 
           date: 'October 2016', 
           text: 'This was great',
-          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
         },
         {
           user: 'Pete', 
           date: 'January 1032', 
           text: 'Alms for the poor',
-          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
         },
         {
           user: 'Hart', 
           date: 'June 1919', 
           text: 'Thank goodness the war is over',
-          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
         },
         {
           user: 'Gonrald', 
           date: 'Hernz 5172', 
           text: 'help',
-          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
         },
       ]
     }
@@ -61,7 +61,7 @@ class App extends React.Component {
   return (
   <section >
     <RatingList ratings={this.state.ratings}/>
-    <ReviewList />
+    <ReviewList reviews={this.state.reviews}/>
   </section>
   )
 }

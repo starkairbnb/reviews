@@ -2,24 +2,60 @@ import React from 'react';
 import RatingList from './RatingList.jsx';
 import ReviewList from './ReviewList.jsx';
 // import fonts from '../css/fonts.css';
+import axios from 'axios';
 
 class App extends React.Component { 
   constructor(props) {
     super(props);
     this.state = {
-      ratings: {
-        accuracy: 2,
-        communication: 2.5,
-        cleanliness: 0,
-        location: 4.5,
-        checkIn: 5,
-        value: 4,
-        average: 3
-      },
-      reviews: []
+      ratings: {},
+      reviews: [
+        {
+          user: 'Linda', 
+          date: 'October 2016', 
+          text: 'This was great',
+          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+        },
+        {
+          user: 'Pete', 
+          date: 'January 1032', 
+          text: 'Alms for the poor',
+          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+        },
+        {
+          user: 'Hart', 
+          date: 'June 1919', 
+          text: 'Thank goodness the war is over',
+          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+        },
+        {
+          user: 'Gonrald', 
+          date: 'Hernz 5172', 
+          text: 'help',
+          userImage: 'https://media.istockphoto.com/photos/human-skull-on-black-background-picture-id512354578?k=6&m=512354578&s=612x612&w=0&h=O3meqDehc1keWJtPCsGWObN6NhyOwCSNMqlO1t89-qw='
+        },
+      ]
     }
   }
 
+  componentDidMount () {
+    this.getRatings()
+      .then(this.getReviews)
+  }
+
+  getRatings () {
+    return axios.get('/api/rating')
+      .then((res) => {
+        this.setState({ ratings: res.data});
+      })
+  }
+
+  getReviews () {
+    return axios.get('/api/reviews')
+    .then((res) => {
+      console.log(res.data);
+    })
+  }
 
   render () {
   return (

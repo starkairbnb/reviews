@@ -13,12 +13,12 @@ class RatingList extends React.Component {
     let { accuracy, communication, cleanliness, location, checkIn, value, average } = this.props.ratings;
     return (
   <div>
-    <Rating id="accuracy" rating={accuracy}/><br/>
-    <Rating id="communication" rating={communication}/><br/>
-    <Rating id="cleanliness" rating={cleanliness}/><br/>
-    <Rating id="location" rating={location}/><br/>
-    <Rating id="checkIn" rating={checkIn}/><br/>
-    <Rating id="value" rating={value}/><br/>
+    <Rating id="Accuracy" rating={accuracy}/><br/>
+    <Rating id="Communication" rating={communication}/><br/>
+    <Rating id="Cleanliness" rating={cleanliness}/><br/>
+    <Rating id="Location" rating={location}/><br/>
+    <Rating id="Check-in" rating={checkIn}/><br/>
+    <Rating id="Value" rating={value}/><br/>
   </div>
   )
   }

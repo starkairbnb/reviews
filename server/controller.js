@@ -26,7 +26,7 @@ module.exports = {
 
   getReviewPage: (req, res) => {
     const page = req.params.page;
-    Model.Review.find().skip(page * 7).limit(7)
+    Model.Review.find().skip((page - 1) * 7).limit(7)
     .then((data) => {
       res.status(200).send(data)
     })

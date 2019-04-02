@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 module.exports = {
   getRating: (req, res) => {
-    Model.Rating.count()
+    Model.Rating.countDocuments()
       .then((count) => {
         let random = Math.random() * count;
         return Model.Rating.findOne().skip(random);

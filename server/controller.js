@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 
 module.exports = {
   getRating: (req, res) => {
-    // mongoose.connection.db.ratings.aggregate([{ $sample: { size: 3}}])
     Model.Rating.count()
       .then((count) => {
         let random = Math.random() * count;
@@ -12,16 +11,24 @@ module.exports = {
       .then((data) => {
         res.status(200).send(data)
       })
-    
   },
 
   postRating: (req, res) => {
     
   },
 
-  getReviews: (req, res) => {
-    res.send('got reviews')
-  }
+  getReviewCount: (req, res) => {
+    Model.Review.countDocuments()
+      .then((count) => {
+        res.status(200).send({count});
+      }) 
+  },
 
-  
+  getReviewPage: (req, res) => {
+    const page = req.params.page;
+    Model.Review.find().skip(page * 7).limit(7)
+    .then((data) => {
+      res.status(200).send(data)
+    })
+  }  
 }

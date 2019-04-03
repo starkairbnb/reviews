@@ -1,9 +1,19 @@
+.review {
+  position: relative;
+}
+
 .profilePic {
   width: 45px;
   height: 45px;
-  position: relative;
   overflow: hidden;
   border-radius: 50%;
+}
+
+.postDetail {
+  /* position: absolute;
+  left: 30px;
+  margin-left: 16px;
+  bottom: 30px; */
 }
 
 .readMore {
@@ -14,4 +24,15 @@
   padding:0!important;
   font: inherit; 
   cursor: pointer;
+}
+
+.readMoreHover {
+  color: #008489!important;
+  background:none!important;
+  color:inherit;
+  border:none; 
+  padding:0!important;
+  font: inherit; 
+  cursor: pointer;
+  border-bottom:1px solid #008489;
 }

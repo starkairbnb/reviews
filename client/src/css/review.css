@@ -6,9 +6,12 @@
   border-radius: 50%;
 }
 
-/* .profilePic {
-  display: inline;
-  margin: 0 auto;
-  height: 100%;
-  width: auto;
-} */
+.readMore {
+  color: #008489!important;
+  background:none!important;
+  color:inherit;
+  border:none; 
+  padding:0!important;
+  font: inherit; 
+  cursor: pointer;
+}

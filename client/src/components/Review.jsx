@@ -23,6 +23,17 @@ class Review extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.review !== prevProps.review) {
+      this.setState({
+        long: false,
+        hovered: false,
+        expanded: false,
+        text1: '',
+      }, this.componentDidMount);
+    }
+  }
+
   readMoreHover() {
     this.setState( { hovered: !this.state.hovered } )
   }
@@ -34,23 +45,17 @@ class Review extends React.Component {
   render() {
   const { user, date, text, userImage } = this.props.review;
   const { long, expanded, text1 } = this.state;
-  // let text1 = text;
-  // let text2;
-  // if (this.state.long) {
-  //   let space = 270 + text.substring(270).indexOf(' ');
-  //   text1 = text.substring(0, space) + '...';
-  //   text2 = text.substring(space);
-  // }
+
     return (
       <div className={review.review}>
-        <div>
+        <div className={review.postDetail}>
           <img src={userImage} className={review.profilePic} />
-          <div className={review.postDetail}>
-            <div >
-              {user}<br />
+          <div >
+            <div className={review.user}>
+              {user}
             </div>
             <div >
-              {date}<br />
+              {date}
             </div>
           </div>
         </div>
@@ -60,7 +65,12 @@ class Review extends React.Component {
           </div> :
           <div>
             {text1 + '...'}
-            <button type='button' className={this.state.hovered ? review.readMoreHover : review.readMore} onMouseEnter={this.readMoreHover} onMouseLeave={this.readMoreHover} onClick={this.expandText}>
+            <button 
+              type='button' 
+              className={this.state.hovered ? review.readMoreHover : review.readMore} 
+              onMouseEnter={this.readMoreHover} 
+              onMouseLeave={this.readMoreHover} 
+              onClick={this.expandText}>
               Read More
             </button>
           </div>) :

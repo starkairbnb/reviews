@@ -13,7 +13,6 @@ class Pagination extends React.Component {
   handleClick(event) {
     const { getReviews } = this.props;
     let currentPage = Number(event.target.id);
-    console.log(currentPage)
     this.setState({
       currentPage 
     }, () => {
@@ -27,18 +26,6 @@ class Pagination extends React.Component {
   }
 
   render() {
-    const { todos, currentPage, todosPerPage } = this.state;
-
-    // // Logic for displaying todos
-    // const indexOfLastTodo = currentPage * todosPerPage;
-    // const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
-    // const currentTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
-
-    // const renderTodos = currentTodos.map((todo, index) => {
-    //   return <li key={index}>{todo}</li>;
-    // });
-
-    // Logic for displaying page numbers
     const pageNumbers = [];
     for (let i = 1; i <= this.props.pageCount; i++) {
       pageNumbers.push(i);
@@ -47,7 +34,7 @@ class Pagination extends React.Component {
     const renderPageNumbers = pageNumbers.map(number => {
       return (
         <li
-          className={styles.li}
+          className={number === this.state.currentPage ? `${styles.li} ${styles.currentPage}` : styles.li}
           key={number}
           id={number}
           onClick={this.handleClick}

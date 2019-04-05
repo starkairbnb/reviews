@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingList from './RatingList.jsx';
 import ReviewList from './ReviewList.jsx';
-// import fonts from '../css/fonts.css';
+import app from '../css/app.css';
 import axios from 'axios';
 
 class App extends React.Component { 
@@ -73,9 +73,9 @@ class App extends React.Component {
 
   render () {
   return (
-  <section >
+  <section className={app.body}>
     <RatingList ratings={this.state.ratings}/>
-    <ReviewList count={this.state.reviews} reviews={this.state.reviews} getReviews={this.getReviews}/>
+    <ReviewList count={this.state.reviewCount} reviews={this.state.reviews} getReviews={this.getReviews}/>
   </section>
   )
 }

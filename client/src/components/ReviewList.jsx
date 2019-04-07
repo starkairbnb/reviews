@@ -1,7 +1,5 @@
 import React from 'react';
 import Review from './Review.jsx';
-// import ReactPaginate from 'react-paginate';
-// import paginate from '../css/paginate.css';
 import Pagination from './Pagination.jsx';
 
 class ReviewList extends React.Component {
@@ -13,7 +11,6 @@ class ReviewList extends React.Component {
   }
 
   render() { 
-    console.log(this.props)
     return (
     <div id='reviewList'>
       <div>

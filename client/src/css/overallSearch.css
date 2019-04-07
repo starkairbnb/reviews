@@ -1,0 +1,46 @@
+.overallSearch {
+  display: flex;
+}
+
+.emptyStar {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.fullStar {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.halfStar {
+  position: absolute;
+  width: 9px;
+  height: 18px;
+  top: -12;
+  left: 12;
+  z-index: 1;
+}
+
+.searchBox {
+  border: 1px solid black;
+  border-radius: 5px
+}
+
+.searchIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.searchInput {
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  padding-bottom: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 4px
+}

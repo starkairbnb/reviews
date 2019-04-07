@@ -13,6 +13,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api', router);
 
-const port = 3000;
+const port = 3004;
 
 app.listen(port, () => console.log(`Server up on ${port}`));

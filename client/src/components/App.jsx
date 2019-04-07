@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingList from './RatingList.jsx';
 import ReviewList from './ReviewList.jsx';
-// import fonts from '../css/fonts.css';
+import app from '../css/app.css';
 import axios from 'axios';
 
 class App extends React.Component { 
@@ -9,6 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       ratings: {},
+      reviewCount: 4,
       reviews: [
         {
           user: 'Linda', 
@@ -36,11 +37,17 @@ class App extends React.Component {
         },
       ]
     }
+    this.getRatings = this.getRatings.bind(this);
+    this.getReviewCount = this.getReviewCount.bind(this);
+    this.getReviews = this.getReviews.bind(this);
   }
 
   componentDidMount () {
     this.getRatings()
-      .then(this.getReviews)
+      .then(this.getReviewCount)
+      .then(() => {
+        this.getReviews(1);
+      })
   }
 
   getRatings () {
@@ -50,18 +57,25 @@ class App extends React.Component {
       })
   }
 
-  getReviews () {
+  getReviewCount () {
     return axios.get('/api/reviews')
     .then((res) => {
-      console.log(res.data);
+      this.setState({ reviewCount: res.data.count });
+    })
+  }
+
+  getReviews (page) {
+    return axios.get(`/api/reviews/${page}`)
+    .then((res) => {
+      this.setState({ reviews: res.data })
     })
   }
 
   render () {
   return (
-  <section >
+  <section className={app.body}>
     <RatingList ratings={this.state.ratings}/>
-    <ReviewList reviews={this.state.reviews}/>
+    <ReviewList count={this.state.reviewCount} reviews={this.state.reviews} getReviews={this.getReviews}/>
   </section>
   )
 }

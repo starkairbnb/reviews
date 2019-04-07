@@ -1,0 +1,20 @@
+.ul {
+  list-style: none;
+  display: flex;
+}
+
+.li {
+  margin-right: 0.3em;
+  user-select: none;
+  cursor: pointer;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 16px !important;
+  line-height: 32px !important;
+  text-align: center !important;
+}
+
+.currentPage {
+  background-color: rgb(0, 132, 137) !important;
+  color: rgb(255, 255, 255) !important;
+}

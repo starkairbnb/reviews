@@ -50,7 +50,7 @@ class Review extends React.Component {
       <div className={review.review}>
         <div className={review.postDetail}>
           <img src={userImage} className={review.profilePic} />
-          <div >
+          <div className={review.userInfo}>
             <div className={review.user}>
               {user}
             </div>
@@ -60,10 +60,10 @@ class Review extends React.Component {
           </div>
         </div>
         {long ? (expanded ?
-          <div>
+          <div className={review.text}>
             {text}
           </div> :
-          <div>
+          <div className={review.text}>
             {text1 + '...'}
             <button 
               type='button' 
@@ -74,9 +74,12 @@ class Review extends React.Component {
               Read More
             </button>
           </div>) :
-          <div>
+          <div className={review.text}>
             {text}
           </div>}
+          <div className={review.border}>
+            <div className={review.borderLine}/>
+          </div>
       </div>
     )
   }

@@ -1,5 +1,20 @@
 .overallSearch {
   display: flex;
+  margin-bottom: 12px;
+}
+
+.header {
+  display: flex;
+  flex-grow: 2;
+}
+
+.reviewCount {
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .emptyStar {
@@ -23,14 +38,29 @@
   z-index: 1;
 }
 
+.starArr {
+  width: 120px;
+  margin-left: 16px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .searchBox {
   border: 1px solid black;
-  border-radius: 5px
+  border-radius: 3px;
+  flex-wrap: nowrap;
+  right: 0px;
 }
 
 .searchIcon {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
+  letter-spacing: normal;
+  line-height: 22px;
+  padding-bottom: 0px;
+  padding-left: 7px;
+  padding-top: 0px;
 }
 
 .searchInput {

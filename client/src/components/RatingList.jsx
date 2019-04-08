@@ -1,8 +1,8 @@
 import React from 'react';
 import Rating from './Rating.jsx';
 import OverallSearch from './OverallSearch.jsx';
-
 import ratingList from '../css/ratingList.css';
+import app from '../css/app.css';
 
 class RatingList extends React.Component {
   constructor(props) {
@@ -18,6 +18,9 @@ class RatingList extends React.Component {
   <div className={ratingList.ratingList}>
     <div>
       <OverallSearch average={average} count={this.props.count}/>
+    </div>
+    <div className={app.border}>
+      <div className={app.borderLine}/>
     </div>
     <div className={ratingList.ratings}>
       <span className={ratingList.column}>

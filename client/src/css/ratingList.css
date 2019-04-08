@@ -10,5 +10,10 @@
 .column {
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 50% !important;
+  float: left !important;
+  /* padding-left: 8px !important; */
+  padding-right: 8px !important;
+  min-height: 1px !important;
+  position: relative !important;
 }

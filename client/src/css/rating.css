@@ -20,14 +20,14 @@
 }
 
 .category {
-  display: flex
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
 
-.row {
+.starArr {
+  width: 110px;
   display: flex;
   flex-direction: row;
-}
-
-.column {
-  width: 100%
+  justify-content: space-between;
 }

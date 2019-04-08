@@ -23,16 +23,20 @@ class RatingList extends React.Component {
       <div className={app.borderLine}/>
     </div>
     <div className={ratingList.ratings}>
-      <span className={ratingList.column}>
-        <Rating id="Accuracy" rating={accuracy}/><br/>
-        <Rating id="Communication" rating={communication}/><br/>
-        <Rating id="Cleanliness" rating={cleanliness}/><br/>
-      </span>
-      <span className={ratingList.column}>
-        <Rating id="Location" rating={location}/><br/>
-        <Rating id="Check-in" rating={checkIn}/><br/>
-        <Rating id="Value" rating={value}/><br/>
-      </span>
+      <div className={ratingList.column}>
+        <span>
+          <Rating id="Accuracy" rating={accuracy}/>
+          <Rating id="Communication" rating={communication}/>
+          <Rating id="Cleanliness" rating={cleanliness}/>
+        </span>
+      </div>
+      <div className={ratingList.column}>
+        <span style={{paddingLeft: 16 + "px"}}>
+          <Rating id="Location" rating={location}/>
+          <Rating id="Check-in" rating={checkIn}/>
+          <Rating id="Value" rating={value}/>
+        </span>
+      </div>
     </div>
   </div>
   )

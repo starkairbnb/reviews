@@ -2,4 +2,26 @@
 
 body{
   font-family: 'Raleway';
+  max-width: 696px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+}
+
+.ratingReviewBorder {
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+
+.border {
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.borderLine {
+  border-bottom-color: rgb(235, 235, 235);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }

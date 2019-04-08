@@ -1,26 +1,29 @@
 import React from 'react';
-// import Star from './Star.jsx';
 import rating from '../css/rating.css';
 
 const Rating = (props) => {
   let starArr = [];
   for (let i = 0; i < 5; i++) {
     let diff = props.rating - i;
+    let starDiv = [];
     switch (true) {
       case diff >= 1:
-        starArr.push(<img className={rating.fullStar} src="/images/fullStar.png" key={i.toString()}/>)
+        starDiv.push(<img className={rating.fullStar} src="/images/fullStar.png" key={i.toString()}/>)
         break;
       case diff === 0.5:
-        starArr.push(<img className={rating.halfStar} src="/images/halfStar.png" key={"half" + i.toString()}/>)
+        starDiv.push(<img className={rating.halfStar} src="/images/halfStar.png" key={"half" + i.toString()}/>)
       case diff < 1:
-        starArr.push(<img className={rating.emptyStar} src="/images/emptyStar.png" key={i.toString()}/>)
+        starDiv.push(<img className={rating.emptyStar} src="/images/emptyStar.png" key={i.toString()}/>)
         break;
     }
+    starDiv = <div key={"div" + i}>{starDiv}</div>;
+    starArr.push(starDiv)
   }
-  // console.log(props.rating)
+
   return (
-  <span>
-    <div >{props.id}</div><div>{starArr}</div>
+  <span className={rating.category}>
+    <div className={rating.column}>{props.id}</div>
+    <div className={`${rating.column} ${rating.starArr}`}>{starArr}</div>
   </span>
   )
 }

@@ -1,20 +1,33 @@
 .emptyStar {
   position: relative;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
 }
 
 .fullStar {
   position: relative;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
 }
 
 .halfStar {
   position: absolute;
-  width: 7.5px;
-  height: 15px;
+  width: 8px;
+  height: 16px;
   top: -12;
   left: 12;
   z-index: 1;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.starArr {
+  width: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

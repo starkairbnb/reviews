@@ -74,7 +74,7 @@ class App extends React.Component {
   render () {
   return (
   <section className={app.body}>
-    <RatingList ratings={this.state.ratings}/>
+    <RatingList ratings={this.state.ratings} count={this.state.reviewCount}/>
     <ReviewList count={this.state.reviewCount} reviews={this.state.reviews} getReviews={this.getReviews}/>
   </section>
   )

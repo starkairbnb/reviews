@@ -1,5 +1,4 @@
 import React from 'react';
-// import Star from './Star.jsx';
 import rating from '../css/rating.css';
 
 const Rating = (props) => {
@@ -17,10 +16,11 @@ const Rating = (props) => {
         break;
     }
   }
-  // console.log(props.rating)
+
   return (
-  <span>
-    <div >{props.id}</div><div>{starArr}</div>
+  <span className={rating.category}>
+    <div className={rating.column}>{props.id}</div>
+    <div className={rating.column}>{starArr}</div>
   </span>
   )
 }

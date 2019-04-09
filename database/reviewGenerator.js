@@ -14,7 +14,20 @@ const verbs = ['loved', 'enjoyed'];
 const adjectives = ['amazing', 'remarkable', 'the best', 'spectacular', 'outstanding', 'lovely', 'great', 'incomparable', 'pleasant', 'wonderful', 'incredible', 'marvelous', 'perfect'];
 const users = ['Rachael', 'Susan', 'Britney', 'Whitney', 'Jessica', 'Thinh', 'Katie', 'Tiffany', 'David', 'Marie', 'Sahar', 'Angela', 'Joe', 'Derrin', 'Michael', 'Alanna', 'Brian', 'Gina', 'Faris', 'Patricia', 'Ladonna', 'Brett', 'Nicole', 'Ben', 'Abby', 'Nessrin', 'Sheree'];
 const endingBlurb = ['Would recommend!', 'Very disappointed.', 'We loved our stay!', 'Charming!', 'I\'ll be back!', 'Thoroughly enjoyed every bit!', 'We cannot wait to go back!']
-const imageURls = [];
+const imageURls = ['https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(1).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(10).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(11).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(12).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(13).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(2).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(3).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(4).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(5).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(6).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(7).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(8).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack(9).png',
+                    'https://s3-us-west-1.amazonaws.com/sharebnbprofiles/Screenshot_2019-04-09+hrla28+Hack+Reactor+LA+-+Students+Slack.png',];
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const years = ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'];
 
@@ -96,7 +109,7 @@ for (let i = 0; i < 100; i++) {
     user: users[Math.floor(Math.random() * users.length)],
     date: `${months[Math.floor(Math.random() * months.length)]} ${years[Math.floor(Math.random() * years.length)]}`,
     text: generateBody(),
-    imageURl: ''
+    userImage: `${imageURls[Math.floor(Math.random() * imageURls.length)]}`
   };
   reviews.push(reviewObj);
 }

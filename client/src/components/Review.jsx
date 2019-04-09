@@ -6,12 +6,10 @@ class Review extends React.Component {
     super(props);
     this.state = {
       long: false,
-      hovered: false,
       expanded: false,
       text1: '',
     }
     this.expandText = this.expandText.bind(this);
-    this.readMoreHover = this.readMoreHover.bind(this);
   }
 
   componentDidMount() {
@@ -27,15 +25,10 @@ class Review extends React.Component {
     if (this.props.review !== prevProps.review) {
       this.setState({
         long: false,
-        hovered: false,
         expanded: false,
         text1: '',
       }, this.componentDidMount);
     }
-  }
-
-  readMoreHover() {
-    this.setState( { hovered: !this.state.hovered } )
   }
 
   expandText() {
@@ -50,7 +43,7 @@ class Review extends React.Component {
       <div className={review.review}>
         <div className={review.postDetail}>
           <img src={userImage} className={review.profilePic} />
-          <div >
+          <div className={review.userInfo}>
             <div className={review.user}>
               {user}
             </div>
@@ -60,23 +53,24 @@ class Review extends React.Component {
           </div>
         </div>
         {long ? (expanded ?
-          <div>
+          <div className={review.text}>
             {text}
           </div> :
-          <div>
+          <div className={review.text}>
             {text1 + '...'}
             <button 
               type='button' 
-              className={this.state.hovered ? review.readMoreHover : review.readMore} 
-              onMouseEnter={this.readMoreHover} 
-              onMouseLeave={this.readMoreHover} 
+              className={review.readMore} 
               onClick={this.expandText}>
               Read More
             </button>
           </div>) :
-          <div>
+          <div className={review.text}>
             {text}
           </div>}
+          <div className={review.border}>
+            <div className={review.borderLine}/>
+          </div>
       </div>
     )
   }

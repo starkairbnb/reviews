@@ -13,6 +13,7 @@ class Pagination extends React.Component {
 
   handleNumberClick(event) {
     const { getReviews } = this.props;
+    console.log(event.target.id)
     let currentPage = Number(event.target.id);
     this.setState({
       currentPage 
@@ -31,6 +32,7 @@ class Pagination extends React.Component {
     const { currentPage } = this.state;
     let page = currentPage;
     let dir = event.target.id;
+    console.log(event.target.id)
     if (dir === '<') {
       page--;
     } else if (dir === '>') {
@@ -51,12 +53,16 @@ class Pagination extends React.Component {
   renderPageNumber(number) {
     return (
       <li
-        className={number === this.state.currentPage ? `${styles.li} ${styles.currentPage}` : styles.li}
+        className={styles.li}
         key={number}
         id={number}
-        onClick={this.handleNumberClick}
+        
       >
-        {number}
+        <button className={styles.button} id={number} onClick={number === this.state.currentPage ? undefined : this.handleNumberClick}>
+          <div className={number === this.state.currentPage ? `${styles.text} ${styles.currentPage}` : styles.text} id={number}>
+            {number}
+          </div>
+        </button>
       </li>
     );
   }
@@ -68,9 +74,13 @@ class Pagination extends React.Component {
         className={styles.li}
         key={key}
         id={str}
-        onClick={this.handleArrowClick}
+        
       >
-        {str}
+      <button className={styles.button} id={str} onClick={this.handleArrowClick}>
+        <div className={`${styles.text} ${styles.arrow}`} id={str}>
+          {str}
+        </div>
+      </button>
       </li>
     );
   }
@@ -136,9 +146,11 @@ class Pagination extends React.Component {
             className={styles.li}
             key={page}
             id={page}
-          >
-            {'...'}
-          </li>
+            >
+              <div className={styles.break}>
+                {'...'}
+              </div>
+            </li>
           );
           pageNumbers.push(breakView);
         }
@@ -154,7 +166,7 @@ class Pagination extends React.Component {
     }
 
     return (
-      <div>
+      <div className={styles.pagination}>
         <ul className={styles.ul}>
           {pageNumbers}
         </ul>

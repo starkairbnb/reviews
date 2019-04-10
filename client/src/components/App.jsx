@@ -9,33 +9,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       ratings: {},
-      reviewCount: 4,
-      reviews: [
-        {
-          user: 'Linda', 
-          date: 'October 2016', 
-          text: 'This was great',
-          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
-        },
-        {
-          user: 'Pete', 
-          date: 'January 1032', 
-          text: 'Alms for the poor',
-          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
-        },
-        {
-          user: 'Hart', 
-          date: 'June 1919', 
-          text: 'Thank goodness the war is over',
-          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
-        },
-        {
-          user: 'Gonrald', 
-          date: 'Hernz 5172', 
-          text: 'help',
-          userImage: 'https://images-na.ssl-images-amazon.com/images/I/31j53xogSeL.jpg'
-        },
-      ]
+      reviewCount: 0,
+      reviews: []
     }
     this.getRatings = this.getRatings.bind(this);
     this.getReviewCount = this.getReviewCount.bind(this);

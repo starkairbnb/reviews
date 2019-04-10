@@ -13,7 +13,6 @@ class Pagination extends React.Component {
 
   handleNumberClick(event) {
     const { getReviews } = this.props;
-    console.log(event.target.id)
     let currentPage = Number(event.target.id);
     this.setState({
       currentPage 
@@ -32,7 +31,6 @@ class Pagination extends React.Component {
     const { currentPage } = this.state;
     let page = currentPage;
     let dir = event.target.id;
-    console.log(event.target.id)
     if (dir === '<') {
       page--;
     } else if (dir === '>') {

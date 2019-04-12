@@ -1,5 +1,3 @@
-const combinedLoaders = require('webpack-combine-loaders')
-
 module.exports = {
   entry: __dirname + '/client/src/index.jsx',
   module: {

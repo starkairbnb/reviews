@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-body{
+.body{
   font-family: 'Raleway';
   max-width: 696px !important;
   margin-left: auto !important;

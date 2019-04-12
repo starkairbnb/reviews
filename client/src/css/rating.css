@@ -2,21 +2,27 @@
   position: relative;
   width: 16px;
   height: 16px;
+  vertical-align: unset!important;
 }
 
 .fullStar {
   position: relative;
   width: 16px;
   height: 16px;
+  vertical-align: unset!important;
 }
 
 .halfStar {
   position: absolute;
   width: 8px;
   height: 16px;
-  top: -12;
-  left: 12;
   z-index: 1;
+  top: 2px;
+  vertical-align: unset!important;
+}
+
+.starContainer {
+  position: relative;
 }
 
 .category {

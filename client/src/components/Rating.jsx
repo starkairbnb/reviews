@@ -16,7 +16,7 @@ const Rating = (props) => {
         starDiv.push(<img className={rating.emptyStar} src="/images/emptyStar.png" key={i.toString()}/>)
         break;
     }
-    starDiv = <div key={"div" + i}>{starDiv}</div>;
+    starDiv = <div className={rating.starContainer} key={"div" + i}>{starDiv}</div>;
     starArr.push(starDiv)
   }
 

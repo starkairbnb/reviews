@@ -1,26 +1,28 @@
 const mongoose = require('mongoose');
 
-const ratingSchema = mongoose.Schema({
+const propertySchema = mongoose.Schema({
+  propertyId: Number,
+})
+
+const reviewSchema = mongoose.Schema({
+  propertyId: Number,
   accuracy: Number,
   communication: Number,
   cleanliness: Number,
   location: Number,
   checkIn: Number,
   value: Number,
-  average: Number
-})
-
-const reviewSchema = mongoose.Schema({
+  average: Number,
   user: String,
   date: String,
   text: String,
-  userImage: String
+  userImage: String,
 })
 
-const Rating = mongoose.model('Rating', ratingSchema);
+const Property = mongoose.model('Property', propertySchema);
 const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = {
-  Rating,
+  Property,
   Review
 }

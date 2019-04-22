@@ -1,6 +1,7 @@
 node_modules
 package-lock.json
 public/bundle.js
+reviewsData.json
 
 ## MAC files ##
 .DS_Store

@@ -156,5 +156,3 @@ const propertyIdGenerator = (i) => {
 //     }
 //   }
 // })();
-
-mongoose.connection.close('done');

@@ -5,9 +5,8 @@
   "main": "server/server.js",
   "scripts": {
     "build": "webpack -d --watch",
-    "start": "nodemon server/server.js && node database/reviewGenerator.js",
+    "start": "nodemon server/server.js",
     "seed": "node database/reviewGenerator.js",
-    "server-dev": "nodemon server/server.js",
     "test": "mocha test"
   },
   "repository": {

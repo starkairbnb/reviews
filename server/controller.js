@@ -1,34 +1,28 @@
-const Model = require('../database/models.js');
-const mongoose = require('mongoose');
+const helper = require('../database/Postgresql/postgresHelpers'); // uncomment for postgresql compatibility
+// const helper = require('../database/MongoDB/mongoHelpers'); // uncomment for mongo compatibility
 
 module.exports = {
-  getRating: (req, res) => {
-    Model.Rating.countDocuments()
-      .then((count) => {
-        let random = Math.random() * count;
-        return Model.Rating.findOne().skip(random);
-      })  
-      .then((data) => {
-        res.status(200).send(data)
-      })
+  getReview: (req, res) => {
+    const { propertyId } = req.params;
+    helper.getReview(propertyId)
+      .then(data => res.status(200).send(data.rows[0]))
+      .catch(err => res.status(404).send(err));
   },
-
-  postRating: (req, res) => {
-    
+  postReview: (req, res) => {
+    helper.postReview(req.body)
+      .then(() => res.status(201).send('Post successful'))
+      .catch(err => res.status(404).send(err))  
   },
-
-  getReviewCount: (req, res) => {
-    Model.Review.countDocuments()
-      .then((count) => {
-        res.status(200).send({count});
-      }) 
+  updateReview: (req, res) => {
+    const { id } = req.params;
+    helper.updateReview(id, req.body)
+      .then(() => res.status(202).send('Update successful'))
+      .catch(err => res.status(404).send(err))
   },
-
-  getReviewPage: (req, res) => {
-    const page = req.params.page;
-    Model.Review.find().skip((page - 1) * 7).limit(7)
-    .then((data) => {
-      res.status(200).send(data)
-    })
-  }  
+  deleteReview: (req, res) => {
+    const { id } = req.params;
+    helper.deleteReview(id)
+      .then(() => res.status(203).send('Delete successful'))
+      .catch(err => res.status(404).send(err))
+  },
 }

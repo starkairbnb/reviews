@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const db = require('../database/index.js')
 const path = require('path');
 const router = require('./router.js');
 

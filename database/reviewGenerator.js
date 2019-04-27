@@ -2,13 +2,7 @@
 const { performance } = require('perf_hooks');
 const fs = require('fs');
 
-// MongoDB setup
-const mongoose = require('mongoose');
-const db = require('./MongoDB/index.js');
-const Model = require('./MongoDB/index.js');
 const wstream = fs.createWriteStream('./reviewsData.csv');
-
-// Postgresql setup
 
 // Datasets
 const place = ['place', 'home', 'house', 'apartment', 'location', 'property'];

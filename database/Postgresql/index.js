@@ -1,6 +1,6 @@
-const pg = require(‘pg’);
+const pg = require('pg');
 
-const connectionString = 'postgresql://localhost:5432/reservation';
+const connectionString = 'postgresql://localhost:5432/starkbnb';
 const pool = new pg.Pool({ connectionString });
 
 // option to generate table and import data on database connection

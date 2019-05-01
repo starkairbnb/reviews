@@ -18,18 +18,18 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getRatings()
-      .then(this.getReviewCount)
-      .then(() => {
-        this.getReviews(1);
-      })
+    // this.getRatings()
+    //   .then(this.getReviewCount)
+    //   .then(() => {
+    //     this.getReviews(1);
+    //   })
   }
 
   getRatings () {
     return axios.get('/api/rating')
       .then((res) => {
         this.setState({ ratings: res.data});
-      })
+      }, console.log(this.state.ratings))
   }
 
   getReviewCount () {
@@ -39,11 +39,11 @@ class App extends React.Component {
     })
   }
 
-  getReviews (page) {
-    return axios.get(`/api/reviews/${page}`)
+  getReviews (propertyid) {
+    return axios.get(`/api/reviews/${propertyid}`)
     .then((res) => {
       this.setState({ reviews: res.data })
-    })
+    }, console.log(this.state.reviews))
   }
 
   render () {

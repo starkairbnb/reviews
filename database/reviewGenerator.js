@@ -1,5 +1,4 @@
 // universal imports
-const { performance } = require('perf_hooks');
 const fs = require('fs');
 
 const wstream = fs.createWriteStream('./reviewsData.csv');

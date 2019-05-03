@@ -14,4 +14,4 @@ textbody TEXT NOT NULL,
 userImage TEXT NOT NULL
 );
 
-\COPY reviews(propertyId,accuracy,communication,cleanliness,location,checkIn,value,average,username,date,textbody,userImage) from '/Users/danielsu/Hack Reactor/SDC/reviews/database/reviewsData.csv' delimiter ',' csv;
+\COPY reviews(propertyid,accuracy,communication,cleanliness,location,checkin,value,average,username,date,textbody,userimage) from '/Users/danielsu/Hack Reactor/SDC/reviewsData.csv' delimiter ',' csv;

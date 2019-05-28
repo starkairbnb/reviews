@@ -99,6 +99,9 @@ const propertyIdGenerator = (i) => {
     reviewObj.textbody = generateBody();
     reviewObj.userImage = `${imageURls[Math.floor(Math.random() * imageURls.length)]}`;
 
+    // json variant
+    // const able = wstream.write(JSON.stringify(reviewObj) + '\r\n'); 
+    
     const able = wstream.write(Object.values(reviewObj).join(',') + '\n');
     if (!able) {
       await new Promise(resolve => {
@@ -107,51 +110,3 @@ const propertyIdGenerator = (i) => {
     }
   }
 })();
-
-//  json seed file generator. creates new object and immediately writes to file
-// (async () => {
-//   for (let i = 1; i <= 10; i += 1) {
-//     reviewObj = {
-//       propertyId: Math.random() * 1e7,
-//       accuracy: Math.random() * 6,
-//       communication: Math.random() * 6,
-//       cleanliness: Math.random() * 6,
-//       location: Math.random() * 6,
-//       checkIn: Math.random() * 6,
-//       value: Math.random() * 6,
-//     }
-
-//     for (let key in reviewObj) {
-//       let val = reviewObj[key];
-//       let valRound = Math.floor(val);
-//       let check = val - valRound;
-//       if (check >= 0.5 && val < 5) {
-//         reviewObj[key] = valRound + 0.5;
-//       } else {
-//         reviewObj[key] = valRound;
-//       }
-//     }
-
-//     let average = (reviewObj.accuracy + reviewObj.communication + reviewObj.cleanliness
-//       + reviewObj.location + reviewObj.checkIn + reviewObj.value) / 6;
-//       let averageRound = Math.floor(average);
-//       let check = average - averageRound;
-//       if (check >= 0.5 && average < 5) {
-//         reviewObj.average = averageRound + 0.5;
-//       } else {
-//         reviewObj.average = averageRound;
-//       }
-
-//       reviewObj.username = users[Math.floor(Math.random() * users.length)];
-//       reviewObj.date = `${months[Math.floor(Math.random() * months.length)]} ${years[Math.floor(Math.random() * years.length)]}`;
-//       reviewObj.text = generateBody();
-//       reviewObj.userImage = `${imageURls[Math.floor(Math.random() * imageURls.length)]}`;
-
-//     const able = wstream.write(JSON.stringify(reviewObj) + '\r\n');
-//     if (!able) {
-//       await new Promise(resolve => {
-//         wstream.once('drain', resolve);
-//       });
-//     }
-//   }
-// })();

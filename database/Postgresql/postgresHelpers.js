@@ -2,7 +2,9 @@ const pool = require('../Postgresql/index.js');
 
 const helper = {
   getReview: (id) => {
-    return pool.query(`SELECT * FROM reviews WHERE propertyid=${id}`)
+    const queryText='SELECT * FROM reviews WHERE propertyid=$1';
+    const queryValue = [id];
+    return pool.query(queryText, queryValue)
   },
   postReview: (body) => {
     const queryText = 'INSERT INTO reviews (id,propertyid,accuracy,communication,cleanliness,location,checkin,value,average,username,date,textbody,userimage) VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)';
